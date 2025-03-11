@@ -11,7 +11,7 @@ const Meals = ({ meal }) => {
         <div>
           {meal.description ? (
             lengthStr > 150 ? (
-              <p>{resume}</p>
+              <p>{resume}...</p>
             ) : (
               <p>{description}</p>
             )
