@@ -18,8 +18,8 @@ const Meals = ({ meal, setBasket, basket }) => {
             copy[index].quantity++;
             setBasket(copy);
             similar++;
-          } else if (basketE.id !== meal.id && similar === 0) {
-            console.log("Add new");
+          } else {
+            // console.log("Add new");
             const neoBasket = [...basket];
             neoBasket.push({
               ...meal,
