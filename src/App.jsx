@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import logo from "./img/deliveroo-logo.png";
+import Basket from "./Components/Basket";
 import Categories from "./Components/Categories";
 const App = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [basket, setBasket] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -47,13 +49,19 @@ const App = () => {
           <section className="full-body">
             <div className="left-body">
               {category.map((categorie, index) => {
-                return <Categories key={index} categorie={categorie} />;
+                return (
+                  <Categories
+                    key={index}
+                    categorie={categorie}
+                    setBasket={setBasket}
+                    basket={basket}
+                  />
+                );
               })}
             </div>
             <div className="right-body">
               <div className="panier">
-                <button>valider votre panier</button>
-                <div>Panier vide</div>
+                <Basket basket={basket} setBasket={setBasket} />
               </div>
             </div>
           </section>

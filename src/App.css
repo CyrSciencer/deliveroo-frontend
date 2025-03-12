@@ -68,7 +68,7 @@ main {
 }
 .right-body {
   display: flex;
-  justify-items: center;
+  align-items: flex-start;
   /* border: 3px solid black; */
   flex: 2;
 }
@@ -95,6 +95,10 @@ h2 {
   justify-content: space-between;
   gap: 10px;
   align-items: center;
+}
+.meal-box:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.086),
+    0 6px 20px 0 rgba(0, 0, 0, 0.042);
 }
 .meal-box > div > div:nth-child(2) {
   overflow: hidden;
@@ -134,24 +138,22 @@ h3 {
   display: flex;
   gap: 30px;
 }
-.meal-box > div:first-child > div:last-child p {
-  color: orangered;
-}
+
 .panier {
+  /* border: 2px solid orange; */
   position: sticky;
   top: 20px;
   border-radius: 5px;
   margin-top: 30px;
-  height: 220px;
   width: 100%;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5%;
-  justify-content: space-around;
+  padding: 5% 0;
+  gap: 10px;
 }
-.panier button {
+.panier > button {
   width: 90%;
   height: 20%;
   border-radius: 5px;
@@ -160,9 +162,56 @@ h3 {
   font-weight: bold;
   color: rgb(109, 109, 109);
 }
-.panier div {
+.panier {
   color: gray;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+}
+.panier .accept {
+  height: 25px;
+  margin-bottom: 15px;
+  background-color: rgb(0, 205, 189);
+  color: white;
+}
+.panier .not-empty {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 2px solid rgb(0, 255, 162); */
   height: 100px;
+}
+.scroller {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: black;
+  width: 100%;
+  display: flex;
+  overflow: scroll;
+  /* border: 2px solid red; */
+  max-height: 500px;
+}
+.panier .not-empty > div {
+  /* border: 2px solid rgb(0, 255, 162); */
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.panier .not-empty > div > div {
+  display: flex;
+  margin-left: 5px;
+  /* border: 2px solid rgb(255, 187, 0); */
+}
+.panier .not-empty > div > p {
+  /* border: 2px solid rgb(0, 255, 89); */
+  width: 70%;
+}
+.panier .not-empty > div button {
+  border-radius: 50px;
+  color: rgb(0, 205, 189);
+  background-color: white;
+  border-style: hidden;
 }
