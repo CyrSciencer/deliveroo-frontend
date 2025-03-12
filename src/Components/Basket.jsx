@@ -39,6 +39,9 @@ const Basket = ({ basket, setBasket }) => {
         ) : (
           <>
             {basket.map((meal, index) => {
+              const totalMealPrice = Math.floor(
+                meal.price * meal.quantity * 100
+              );
               return (
                 <div key={index} className="not-empty">
                   <div>
@@ -53,7 +56,7 @@ const Basket = ({ basket, setBasket }) => {
                     </div>
                     <p>{meal.title}</p>
                   </div>
-                  <p>{meal.price} €</p>
+                  <p>{totalMealPrice / 100} €</p>
                 </div>
               );
             })}
@@ -61,7 +64,7 @@ const Basket = ({ basket, setBasket }) => {
         )}
       </div>
       {basket.length !== 0 && (
-        <div>
+        <div className="prices">
           <Prix total={sum} />
         </div>
       )}
